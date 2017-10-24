@@ -1,6 +1,6 @@
 var WINDOW_WIDTH=800;
 var WINDOW_HEIGHT=500;
-var R=3;
+var R=4;
 var MARGIN_TOP=60;
 var MARGIN_LEFT=150;
 var endTime=new Date();
