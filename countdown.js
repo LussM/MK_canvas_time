@@ -1,8 +1,8 @@
-var WINDOW_WIDTH=600;
+var WINDOW_WIDTH=800;
 var WINDOW_HEIGHT=500;
 var R=3;
 var MARGIN_TOP=60;
-var MARGIN_LEFT=90;
+var MARGIN_LEFT=150;
 var endTime=new Date();
 endTime.setTime(endTime.getTime()+3600*1000);
 var curShowTimeSeconds=0;
