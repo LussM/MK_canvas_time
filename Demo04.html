@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自由落体</title>
+</head>
+<body>
+    <canvas id="drawing" style="border: 1px solid;"></canvas>
+<script type="text/javascript">
+    var ball={
+        x:300,
+        y:100,
+        r:10,
+        g:2,
+        vx:4,
+        vy:-10,
+        color:"red",
+        mu:0.5
+
+    }
+    window.onload=function () {
+        var oCanvas=document.getElementById("drawing");
+        oCanvas.width="1200";
+        oCanvas.height="500";
+        if(oCanvas.getContext){
+            var context=oCanvas.getContext("2d");
+
+        setInterval(function () {
+            render1(context);
+            update1(context);
+        },40);
+        }
+        function update1(context) {
+            ball.x+=ball.vx;
+            ball.y+=ball.vy;
+            ball.vy+=ball.g;
+            if(ball.y>context.canvas.height-ball.r){
+                ball.y=context.canvas.height-ball.r;
+                ball.vy=-ball.vy*ball.mu;
+            }
+        }
+        function render1(context) {
+            context.clearRect(0,0,context.canvas.width,context.canvas.height);
+            context.fillStyle=ball.color;
+            context.beginPath();
+            context.arc(ball.x,ball.y,ball.r,0,2*Math.PI,false);
+            context.fill();
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        window.onload=function () {
+            var oDraw=document.getElementById("drawing");
+            if(oDraw.getContext){
+                var context=oDraw.getContext("2d");
+                context.beginPath();
+                context.arc(100,100,90,0,1*Math.PI,false);
+                context.closePath();
+                context.lineWidth="3";
+                context.strokeStyle="blue";
+                context.fillStyle="pink";
+                context.fill();
+                context.stroke();
+            }
+        }
+    </script>
+</head>
+<body>
+    <canvas id="drawing" width="500" height="500" style="border: 1px solid darkgrey;"></canvas>
+</body>
+</html>
