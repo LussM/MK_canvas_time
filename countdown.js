@@ -1,17 +1,17 @@
-var WINDOW_WIDTH=1200;
-var WINDOW_HEIGHT=600;
-var R=8;
+var WINDOW_WIDTH=600;
+var WINDOW_HEIGHT=500;
+var R=3;
 var MARGIN_TOP=60;
-var MARGIN_LEFT=30;
+var MARGIN_LEFT=90;
 var endTime=new Date();
 endTime.setTime(endTime.getTime()+3600*1000);
 var curShowTimeSeconds=0;
 var balls=[];
 var colors=["lightblue","pink","palegreen","coral","plum","hotpink","gold","deepskyblue","white","olivedrab"];
 
-window.onload=function () {
+window.onload=function (event) {
     var oCanvas=document.getElementById("drawing");
-    oCanvas.width=document.body.clientWidth;
+    oCanvas.width=WINDOW_WIDTH;
     oCanvas.height=WINDOW_HEIGHT;
     if(oCanvas.getContext){
         var context=oCanvas.getContext("2d");
@@ -22,6 +22,7 @@ window.onload=function () {
             update();//更新时间，更新球
         },100);
     }
+
 };
 function render(context) {
     // var date=new Date();
